@@ -3,11 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portiva Logistics | أعمالنا</title>
+    <title>Portiva Logistics</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <a href="https://wa.me/201204646350" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
     <header>
         <nav class="pure-transparent">
@@ -16,6 +20,7 @@
                 <ul class="nav-menu">
                     <li><a href="index.html" class="nav-square-btn active"><i class="fas fa-home"></i> الرئيسية</a></li>
                     <li><a href="#services" class="nav-square-btn"><i class="fas fa-ship"></i> خدماتنا</a></li>
+                    <li><a href="#about" class="nav-square-btn"><i class="fas fa-users"></i> من نحن</a></li>
                     <li><a href="#gallery" class="nav-square-btn"><i class="fas fa-camera"></i> أعمالنا</a></li>
                     <li><a href="#quote" class="nav-square-btn contact-special">تواصل معنا</a></li>
                 </ul>
@@ -64,9 +69,16 @@
         </div>
     </section>
 
+    <section class="about-section" id="about">
+        <div class="container">
+            <h2>من نحن</h2>
+            <p>بورتيفا لوجستيكس هي شريكك الموثوق في تقديم حلول الشحن والتخليص الجمركي المتكاملة. نحن نسعى لتسهيل حركة تجارتك عالمياً بأقل التكاليف وأعلى جودة، مع فريق من الخبراء في قلب الموانئ المصرية.</p>
+        </div>
+    </section>
+
     <section class="work-gallery" id="gallery">
         <h2 class="gallery-title">أعمالنا من أرض الواقع</h2>
-        <div class="gallery-grid" id="dynamic-gallery">
+        <div class="gallery-grid" id="smart-gallery">
             </div>
     </section>
 
@@ -79,49 +91,35 @@
     </footer>
 
     <script>
-        const galleryContainer = document.getElementById('dynamic-gallery');
-        const commonNames = ['img', 'IMG', 'image', 'work', 'portiva']; // الأسماء اللي المبرمج هيدور بيها
-        const extensions = ['jpg', 'png', 'jpeg', 'JPG']; // الامتدادات المشهورة
-        const maxImages = 6; // عدد الصور المطلوب
+        const gallery = document.getElementById('smart-gallery');
+        const extensions = ['jpg', 'png', 'jpeg', 'JPG', 'PNG'];
+        const baseNames = ['img', 'IMG', 'image', 'work'];
 
-        function huntImages() {
-            for (let i = 1; i <= maxImages; i++) {
-                let found = false;
-                const imgBox = document.createElement('div');
-                imgBox.className = 'img-box';
-                const imgElement = document.createElement('img');
-                
-                // المبرمج بيجرب كل الاحتمالات لاسم الصورة
+        for (let i = 1; i <= 7; i++) {
+            let imgContainer = document.createElement('div');
+            imgContainer.className = 'img-box';
+            let finalImg = document.createElement('img');
+            
+            // محاولة إيجاد الصورة بكل الطرق الممكنة
+            let found = false;
+            baseNames.forEach(name => {
                 extensions.forEach(ext => {
-                    commonNames.forEach(name => {
-                        if (found) return;
-                        let testPath = `${name}${i}.${ext}`;
-                        
-                        let tester = new Image();
-                        tester.src = testPath;
-                        tester.onload = function() {
-                            if (!found) {
-                                imgElement.src = testPath;
-                                found = true;
-                            }
-                        };
-                    });
+                    if (found) return;
+                    let testSrc = name + i + '.' + ext;
+                    let tester = new Image();
+                    tester.src = testSrc;
+                    tester.onload = function() {
+                        if (!found) {
+                            finalImg.src = testSrc;
+                            found = true;
+                        }
+                    };
                 });
+            });
 
-                // لو المبرمج ملقاش أي صورة بعد ثانية، بيحط صورة "لوجستيكس" احترافية
-                setTimeout(() => {
-                    if (!found) {
-                        imgElement.src = 'https://via.placeholder.com/400x300/000c1d/007bff?text=Portiva+Work+' + i;
-                    }
-                }, 1000);
-
-                imgBox.appendChild(imgElement);
-                galleryContainer.appendChild(imgBox);
-            }
+            imgContainer.appendChild(finalImg);
+            gallery.appendChild(imgContainer);
         }
-
-        window.onload = huntImages;
     </script>
-
 </body>
 </html>
