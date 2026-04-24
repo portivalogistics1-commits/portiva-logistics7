@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portiva Logistics | الريادة في الشحن</title>
+    <title>Portiva Logistics | القمة</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -29,18 +29,17 @@
     </header>
 
     <section class="hero-main" style="background-image: url('hero.jpg');">
-        <div class="hero-content left-align">
-            <div class="brand-text">
-                <h1 class="main-title">PORTIVA</h1>
-                <h3 class="sub-logo-text">LOGISTICS</h3>
-            </div>
-            
-            <div class="hero-line"></div>
-            <h2 class="hero-h2">نقل وتخليص جمركي احترافي</h2>
-            
+        <div class="brand-side-left">
+            <h1 class="main-title">PORTIVA</h1>
+            <h3 class="sub-logo-text">LOGISTICS</h3>
+        </div>
+
+        <div class="hero-center-action">
             <div class="action-box">
                 <p class="bouncing-text">نحن نتحمل العبء.. وأنت تحصد النجاح</p>
-                <a href="#quote" class="cta-main">اطلب عرض سعر الآن +</a>
+                <div class="cta-wrapper">
+                    <a href="#quote" class="cta-main-box">اطلب عرض سعر الآن +</a>
+                </div>
             </div>
         </div>
 
@@ -73,7 +72,7 @@
     <section class="about-us" id="about">
         <div class="container">
             <h2>من نحن</h2>
-            <p>بورتيفا لوجستيكس هي شريكك الموثوق، نضمن وصول بضائعك بأمان وفي أسرع وقت ممكن وبأقل تكلفة جمركية.</p>
+            <p>بورتيفا لوجستيكس هي شريكك الموثوق في عالم اللوجستيات.</p>
         </div>
     </section>
 
@@ -105,13 +104,7 @@
         </div>
     </section>
 
-    <footer>
-        <div class="social">
-            <a href="https://www.facebook.com/share/1DwzpSXChW/" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://wa.me/201204646350" target="_blank"><i class="fab fa-whatsapp"></i></a>
-        </div>
-        <p>© 2026 Portiva Logistics</p>
-    </footer>
+    <footer><p>© 2026 Portiva Logistics</p></footer>
 
     <script>
         document.querySelectorAll('.auto-img').forEach(img => {
@@ -125,12 +118,11 @@
                 testImg.onload = () => { img.src = testImg.src; found = true; };
             });
         });
-
         function sendQuote() {
             const name = document.getElementById('q-name').value;
             const phone = document.getElementById('q-phone').value;
             const type = document.getElementById('q-type').value;
-            const text = `طلب جديد من الموقع:%0Aالاسم: ${name}%0Aالموبايل: ${phone}%0Aالخدمة: ${type}`;
+            const text = `طلب جديد:%0Aالاسم: ${name}%0Aالخدمة: ${type}`;
             window.open(`https://wa.me/201204646350?text=${text}`, '_blank');
         }
     </script>
