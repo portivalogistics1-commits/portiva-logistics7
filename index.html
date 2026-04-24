@@ -35,7 +35,7 @@
             <div class="hero-line"></div>
         </div>
 
-        <div class="action-box-right">
+        <div class="action-box-fixed">
             <p class="bouncing-text">نحن نتحمل العبء.. وأنت تحصد النجاح</p>
             <div class="cta-wrapper">
                 <a href="#quote" class="cta-main-box">اطلب عرض سعر الآن +</a>
@@ -44,7 +44,7 @@
 
         <div class="services-overlap" id="services">
             <div class="services-grid">
-                <a href="customs.html" class="service-card" id="first-card">
+                <a href="customs.html" class="service-card">
                     <i class="fas fa-file-contract"></i>
                     <h4>التخليص الجمركي</h4>
                     <p>من البوليصة حتى باب بيتك.</p>
@@ -77,28 +77,11 @@
             <div class="img-box"><img data-src="img4" class="auto-img"></div>
             <div class="img-box"><img data-src="img5" class="auto-img"></div>
             <div class="img-box"><img data-src="img6" class="auto-img"></div>
-            <div class="img-box"><img data-src="img7" class="auto-img"></div>
-        </div>
-    </section>
-
-    <section class="quote-form-section" id="quote">
-        <h2>طلب عرض سعر سريع</h2>
-        <div class="form-container">
-            <input type="text" id="q-name" placeholder="الاسم الكامل">
-            <input type="text" id="q-phone" placeholder="رقم الموبايل">
-            <select id="q-type">
-                <option>نوع الخدمة</option>
-                <option>تخليص جمركي</option>
-                <option>نقل بري</option>
-                <option>شحن دولي</option>
-            </select>
-            <button onclick="sendQuote()">إرسال الطلب <i class="fab fa-whatsapp"></i></button>
         </div>
     </section>
 
     <footer>
         <p>جميع الحقوق محفوظة لشركة بورتيفا لوجستيكس © 2026</p>
-        <p>portivalogistics1@gmail.com | +20 120 464 6350</p>
         <div class="social">
             <a href="https://www.facebook.com/share/1DwzpSXChW/" target="_blank"><i class="fab fa-facebook"></i></a>
             <a href="https://wa.me/201204646350" target="_blank"><i class="fab fa-whatsapp"></i></a>
@@ -117,13 +100,6 @@
                 testImg.onload = () => { img.src = testImg.src; found = true; };
             });
         });
-        function sendQuote() {
-            const name = document.getElementById('q-name').value;
-            const phone = document.getElementById('q-phone').value;
-            const type = document.getElementById('q-type').value;
-            const text = `طلب جديد من الموقع:%0Aالاسم: ${name}%0Aالموبايل: ${phone}%0Aالخدمة: ${type}`;
-            window.open(`https://wa.me/201204646350?text=${text}`, '_blank');
-        }
     </script>
 </body>
 </html>
