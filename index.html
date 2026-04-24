@@ -3,22 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portiva Logistics - التخليص الجمركي</title>
+    <title>Portiva Logistics | التخليص الجمركي</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
     <header>
         <nav>
             <div class="contact-btn">
-                <a href="#"><i class="fab fa-whatsapp"></i> تواصل معنا</a>
+                <a href="https://wa.me/201204646350" target="_blank">
+                    <i class="fab fa-whatsapp"></i> تواصل معنا
+                </a>
             </div>
             <ul>
                 <li><a href="#" class="active">الرئيسية</a></li>
-                <li><a href="#">خدماتنا</a></li>
-                <li><a href="#">أعمالنا</a></li>
-                <li><a href="#">طلب عرض سعر</a></li>
+                <li><a href="#services">خدماتنا</a></li>
+                <li><a href="#gallery">أعمالنا</a></li>
+                <li><a href="#quote">طلب عرض سعر</a></li>
                 <li><a href="#">من نحن</a></li>
                 <li><a href="#">اتصل بنا</a></li>
             </ul>
@@ -28,17 +30,16 @@
         </nav>
     </header>
 
-    <section class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('hero.jpg');">
+    <section class="hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('hero.jpg');">
         <div class="hero-content">
-            <div class="hero-logo-large">
-                <img src="logo.png" alt="Portiva">
-            </div>
-            <h1>التخليص الجمركي والنقل من جميع الموانئ</h1>
-            <p>بسرعة • أمان • احترافية</p>
-            <button class="cta-btn">تواصل معنا الآن +</button>
+            <h1 class="main-title">PORTIVA</h1>
+            <p class="sub-logo-text">— LOGISTICS —</p>
+            <h2>التخليص الجمركي والنقل من جميع الموانئ</h2>
+            <p class="features">بسرعة • أمان • احترافية</p>
+            <a href="https://wa.me/201204646350" class="cta-btn">تواصل معنا الآن +</a>
         </div>
 
-        <div class="services-container">
+        <div class="services-container" id="services">
             <h3>خدماتنا</h3>
             <div class="services-grid">
                 <div class="service-card">
@@ -65,7 +66,7 @@
         </div>
     </section>
 
-    <section class="work-gallery">
+    <section class="work-gallery" id="gallery">
         <h2>أعمالنا من أرض الواقع</h2>
         <div class="gallery-grid">
             <img src="img1.jpg" alt="Work 1">
@@ -78,34 +79,71 @@
         </div>
     </section>
 
-    <section class="quote-section">
+    <section class="quote-section" id="quote">
         <h2>طلب عرض سعر</h2>
-        <form class="quote-form">
-            <input type="text" placeholder="الاسم الكامل">
-            <input type="text" placeholder="رقم الهاتف">
-            <select>
-                <option>نوع الحاوية</option>
-            </select>
-            <input type="number" placeholder="عدد الحاويات">
-            <input type="text" placeholder="تفاصيل إضافية">
-            <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i> إرسال الطلب</button>
+        <form class="quote-form" id="whatsappForm">
+            <div class="input-group">
+                <i class="fas fa-user"></i>
+                <input type="text" id="name" placeholder="الاسم الكامل" required>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-phone"></i>
+                <input type="text" id="phone" placeholder="رقم الهاتف" required>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-ship"></i>
+                <select id="type">
+                    <option value="حاوية 20 قدم">حاوية 20 قدم</option>
+                    <option value="حاوية 40 قدم">حاوية 40 قدم</option>
+                    <option value="شحنة جزئية">شحنة جزئية</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-calculator"></i>
+                <input type="number" id="count" placeholder="عدد الحاويات">
+            </div>
+            <div class="input-group">
+                <i class="fas fa-paperclip"></i>
+                <input type="text" id="details" placeholder="تفاصيل إضافية">
+            </div>
+            <button type="button" onclick="sendToWhatsApp()" class="submit-btn">
+                <i class="fas fa-paper-plane"></i> إرسال الطلب
+            </button>
         </form>
     </section>
 
     <footer>
-        <div class="footer-top">
+        <div class="footer-content">
             <div class="social-links">
-                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://wa.me/201204646350"><i class="fab fa-whatsapp"></i></a>
                 <a href="#"><i class="fab fa-linkedin"></i></a>
                 <a href="#"><i class="fab fa-facebook"></i></a>
             </div>
             <p>© 2026 Portiva Logistics. All Rights Reserved.</p>
-            <div class="footer-contact">
-                <span>info@portiva-logistics.com <i class="fas fa-envelope"></i></span>
+            <div class="contact-info">
+                <span>portivalogistics1@gmail.com <i class="fas fa-envelope"></i></span>
                 <span>+20 120 464 6350 <i class="fas fa-phone"></i></span>
             </div>
         </div>
     </footer>
 
+    <script>
+        function sendToWhatsApp() {
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const type = document.getElementById('type').value;
+            const count = document.getElementById('count').value;
+            const details = document.getElementById('details').value;
+            
+            const message = `طلب عرض سعر جديد:%0A` +
+                            `- الاسم: ${name}%0A` +
+                            `- الهاتف: ${phone}%0A` +
+                            `- النوع: ${type}%0A` +
+                            `- العدد: ${count}%0A` +
+                            `- تفاصيل: ${details}`;
+            
+            window.open(`https://wa.me/201204646350?text=${message}`, '_blank');
+        }
+    </script>
 </body>
 </html>
