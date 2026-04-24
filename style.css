@@ -1,31 +1,22 @@
-:root { --blue: #007bff; --glow: #00d4ff; --dark: #000c1d; }
+:root { --blue: #007bff; --dark: #000c1d; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Cairo', sans-serif; direction: rtl; background: #fff; line-height: 1.6; }
+body { font-family: 'Cairo', sans-serif; direction: rtl; background: #fff; }
 
-/* Navbar الشفاف والمنور */
-header nav.transparent-nav {
-    background: rgba(0, 12, 29, 0.4); 
-    padding: 10px 0;
-    position: absolute;
-    width: 100%;
-    z-index: 2000;
-}
+/* Navbar الشفاف تماماً */
+nav.pure-transparent { background: transparent; padding: 15px 0; position: absolute; width: 100%; z-index: 1000; }
 .nav-container { width: 92%; margin: auto; display: flex; justify-content: space-between; align-items: center; }
 .nav-menu { display: flex; list-style: none; gap: 10px; }
-.nav-icon-btn {
-    color: white;
-    text-decoration: none;
-    padding: 6px 12px;
-    font-size: 13px;
-    transition: 0.3s;
-    border-radius: 4px;
+.nav-square-btn { 
+    background: rgba(0, 123, 255, 0.1); 
+    color: white; 
+    text-decoration: none; 
+    padding: 10px 15px; 
+    border: 1px solid var(--blue); 
+    border-radius: 4px; /* مربعة */
+    font-size: 13px; 
+    transition: 0.3s; 
 }
-.nav-icon-btn:hover, .nav-icon-btn.active {
-    color: var(--glow);
-    box-shadow: 0 0 8px var(--blue);
-    background: rgba(0, 123, 255, 0.15);
-}
-.contact-special { background: var(--blue); font-weight: bold; }
+.nav-square-btn:hover, .nav-square-btn.active { background: var(--blue); box-shadow: 0 0 15px var(--blue); }
 .logo img { height: 40px; }
 
 /* Hero */
@@ -34,50 +25,41 @@ header nav.transparent-nav {
 .main-title { font-size: 60px; font-weight: 900; color: white; line-height: 1; }
 .sub-logo-text { font-size: 50px; color: var(--blue); font-weight: bold; }
 
-/* تمركز الجملة والزرار */
-@keyframes actionMove { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
-.action-zone-final {
-    position: absolute; 
-    right: 28%; 
-    bottom: 200px; 
-    text-align: center;
-    animation: actionMove 3s infinite ease-in-out;
+/* الأيقونة المربعة اللي بتنطط في النص */
+@keyframes finalBounce { 0%, 100% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, -15px); } }
+.magic-center-container {
+    position: absolute;
+    left: 50%;
+    bottom: 225px; 
+    transform: translateX(-50%);
+    z-index: 100;
+    animation: finalBounce 2.5s infinite ease-in-out;
 }
-.bouncing-text { font-size: 19px; color: var(--blue); font-weight: bold; background: white; padding: 5px 15px; border-radius: 5px; margin-bottom: 8px; display: inline-block; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
-.cta-main-box { background: var(--blue); color: white; padding: 10px 25px; text-decoration: none; border-radius: 5px; font-weight: bold; border: 2px solid white; display: inline-block; }
+.bouncing-square-box {
+    background: rgba(255, 255, 255, 0.98);
+    padding: 25px;
+    border: 3px solid var(--blue);
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+}
+.magic-text { font-size: 19px; color: var(--dark); font-weight: bold; margin-bottom: 12px; }
+.cta-with-icon { background: var(--blue); color: white; text-decoration: none; padding: 12px 25px; border-radius: 6px; font-weight: bold; display: inline-block; border: 2px solid white; }
 
-/* كروت الخدمات */
-.services-overlap { position: absolute; bottom: -45px; width: 92%; left: 50%; transform: translateX(-50%); }
+/* الكروت الزرقاء */
+.services-overlap { position: absolute; bottom: -45px; width: 94%; left: 50%; transform: translateX(-50%); }
 .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
-.service-card { background: rgba(0, 15, 35, 0.95); padding: 20px 10px; border-radius: 8px; color: white; text-decoration: none; text-align: center; border: 1px solid var(--blue); transition: 0.3s; }
-.service-card:hover { transform: translateY(-5px); background: var(--blue); }
-.service-card i { font-size: 28px; color: var(--blue); margin-bottom: 10px; display: block; }
-.service-card:hover i { color: white; }
-.service-card h4 { font-size: 15px; margin-bottom: 5px; }
+.service-card { background: rgba(0, 15, 35, 0.95); padding: 25px 10px; border-radius: 8px; color: white; text-decoration: none; text-align: center; border: 1px solid var(--blue); }
+.service-card i { font-size: 32px; color: var(--blue); margin-bottom: 10px; display: block; }
+.service-card h4 { color: var(--blue); margin-bottom: 5px; }
 .service-card p { font-size: 11px; opacity: 0.8; }
 
-/* من نحن */
-.about-section { padding: 120px 10% 60px; text-align: center; background: #fdfdfd; }
-.about-section h2 { font-size: 30px; color: var(--dark); margin-bottom: 25px; position: relative; }
-.about-section h2::after { content: ''; width: 60px; height: 3px; background: var(--blue); position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); }
-.about-content p { max-width: 900px; margin: auto; font-size: 18px; color: #444; margin-bottom: 20px; }
-
-/* الجاليري - الحل الجذري */
-.work-gallery { padding: 50px 5%; text-align: center; }
+/* الجاليري (6 صور جنب بعض - الحل الجذري) */
+.work-gallery { padding: 130px 5% 50px; text-align: center; }
 .gallery-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; }
-.img-box { 
-    height: 140px; 
-    border-radius: 6px; 
-    overflow: hidden; 
-    border: 2px solid #eee;
-    background: var(--dark);
-}
-.img-box img { width: 100%; height: 100%; object-fit: cover; display: block; transition: 0.3s; }
-.img-box:hover img { transform: scale(1.1); }
+.img-box { height: 140px; border-radius: 6px; overflow: hidden; border: 2px solid var(--blue); background: #000; transition: 0.3s; }
+.img-box:hover { transform: scale(1.05); box-shadow: 0 0 15px var(--blue); }
+.img-box img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-footer { background: #000; color: white; padding: 30px; text-align: center; }
-.social a { color: white; text-decoration: none; margin: 0 15px; font-size: 18px; }
-.whatsapp-float { position: fixed; bottom: 20px; left: 20px; background: #25d366; color: white; width: 55px; height: 55px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 28px; z-index: 3000; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
-
-/* الهيرو في الصفحات الفرعية */
-.hero-sub { height: 100vh; background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; background-image: url('hero.jpg'); }
+footer { background: #000; color: white; padding: 35px; text-align: center; }
+.social a { color: white; font-size: 26px; margin: 0 12px; }
