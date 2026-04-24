@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portiva Logistics | الشغل العالمي</title>
+    <title>Portiva Logistics | القمة في الشحن</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -18,22 +18,24 @@
             <div class="nav-container">
                 <div class="logo"><img src="logo.png" alt="Portiva"></div>
                 <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-btn active">الرئيسية</a></li>
-                    <li><a href="#services" class="nav-btn">خدماتنا</a></li>
-                    <li><a href="#about" class="nav-btn">من نحن</a></li>
-                    <li><a href="#gallery" class="nav-btn">أعمالنا</a></li>
-                    <li><a href="#quote" class="nav-btn contact-special">تواصل معنا</a></li>
+                    <li><a href="index.html" class="nav-links">الرئيسية</a></li>
+                    <li><a href="#services" class="nav-links">خدماتنا</a></li>
+                    <li><a href="#about" class="nav-links">من نحن</a></li>
+                    <li><a href="#gallery" class="nav-links">أعمالنا</a></li>
+                    <li><a href="#quote" class="nav-links contact-blue">تواصل معنا</a></li>
                 </ul>
             </div>
         </nav>
     </header>
 
-    <section class="hero-main">
+    <section class="hero-main" style="background-image: url('hero.jpg');">
         <div class="hero-content">
             <h1 class="main-title">PORTIVA</h1>
-            <p class="sub-logo-text">— LOGISTICS —</p>
+            <p class="sub-logo-text">LOGISTICS</p>
+            <div class="hero-line"></div>
             <h2>نقل وتخليص جمركي احترافي</h2>
-            <a href="#quote" class="cta-main">اطلب عرض سعر الآن</a>
+            <p class="slogan">نحن نتحمل العبء.. وأنت تحصد النجاح</p>
+            <a href="#quote" class="cta-main">اطلب عرض سعر الآن +</a>
         </div>
 
         <div class="services-overlap" id="services">
@@ -63,20 +65,22 @@
     </section>
 
     <section class="about-us" id="about">
-        <h2>من نحن</h2>
-        <p>بورتيفا لوجستيكس هي شريكك الموثوق في عالم الشحن والتخليص. نحن نجمع بين الخبرة الميدانية والتكنولوجيا لضمان وصول بضائعك بأمان وفي أسرع وقت.</p>
+        <div class="container">
+            <h2>من نحن</h2>
+            <p>بورتيفا لوجستيكس هي شريكك الموثوق في عالم الشحن والتخليص. نحن نجمع بين الخبرة الميدانية والتكنولوجيا لضمان وصول بضائعك بأمان وفي أسرع وقت.</p>
+        </div>
     </section>
 
     <section class="work-gallery" id="gallery">
         <h2>أعمالنا من أرض الواقع</h2>
         <div class="gallery-grid">
-            <div class="img-box"><img data-src="img1" class="auto-img" alt="Work 1"></div>
-            <div class="img-box"><img data-src="img2" class="auto-img" alt="Work 2"></div>
-            <div class="img-box"><img data-src="img3" class="auto-img" alt="Work 3"></div>
-            <div class="img-box"><img data-src="img4" class="auto-img" alt="Work 4"></div>
-            <div class="img-box"><img data-src="img5" class="auto-img" alt="Work 5"></div>
-            <div class="img-box"><img data-src="img6" class="auto-img" alt="Work 6"></div>
-            <div class="img-box"><img data-src="img7" class="auto-img" alt="Work 7"></div>
+            <div class="img-box"><img data-src="img1" class="auto-img"></div>
+            <div class="img-box"><img data-src="img2" class="auto-img"></div>
+            <div class="img-box"><img data-src="img3" class="auto-img"></div>
+            <div class="img-box"><img data-src="img4" class="auto-img"></div>
+            <div class="img-box"><img data-src="img5" class="auto-img"></div>
+            <div class="img-box"><img data-src="img6" class="auto-img"></div>
+            <div class="img-box"><img data-src="img7" class="auto-img"></div>
         </div>
     </section>
 
@@ -96,31 +100,24 @@
     </section>
 
     <footer>
-        <div class="footer-info">
-            <p>جميع الحقوق محفوظة لشركة بورتيفا لوجستيكس © 2026</p>
-            <p>portivalogistics1@gmail.com | +20 120 464 6350</p>
-            <div class="social">
-                <a href="https://www.facebook.com/share/1DwzpSXChW/"><i class="fab fa-facebook"></i></a>
-                <a href="https://wa.me/201204646350"><i class="fab fa-whatsapp"></i></a>
-            </div>
+        <p>جميع الحقوق محفوظة لشركة بورتيفا لوجستيكس © 2026</p>
+        <p>portivalogistics1@gmail.com | +20 120 464 6350</p>
+        <div class="social">
+            <a href="https://www.facebook.com/share/1DwzpSXChW/"><i class="fab fa-facebook"></i></a>
+            <a href="https://wa.me/201204646350"><i class="fab fa-whatsapp"></i></a>
         </div>
     </footer>
 
     <script>
-        // سكريبت حل مشكلة الصور الجذري
         document.querySelectorAll('.auto-img').forEach(img => {
             const baseName = img.getAttribute('data-src');
             const extensions = ['jpg', 'JPG', 'png', 'jpeg'];
             let found = false;
-            
             extensions.forEach(ext => {
                 if(found) return;
                 const testImg = new Image();
                 testImg.src = baseName + '.' + ext;
-                testImg.onload = () => {
-                    img.src = testImg.src;
-                    found = true;
-                };
+                testImg.onload = () => { img.src = testImg.src; found = true; };
             });
         });
 
