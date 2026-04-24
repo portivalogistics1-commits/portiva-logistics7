@@ -3,80 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portiva Logistics | الرئيسية</title>
+    <title>Portiva Logistics | الشغل العالمي</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <a href="https://wa.me/201204646350" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <header>
         <nav>
-            <div class="contact-btn"><a href="https://wa.me/201204646350" target="_blank"><i class="fab fa-whatsapp"></i> تواصل معنا</a></div>
-            <ul>
-                <li><a href="index.html" class="active">الرئيسية</a></li>
-                <li><a href="#services">خدماتنا</a></li>
-                <li><a href="#about">من نحن</a></li>
-                <li><a href="#gallery">أعمالنا</a></li>
-            </ul>
-            <div class="logo"><img src="logo.png" alt="Portiva"></div>
+            <div class="nav-container">
+                <div class="logo"><img src="logo.png" alt="Portiva"></div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-btn active">الرئيسية</a></li>
+                    <li><a href="#services" class="nav-btn">خدماتنا</a></li>
+                    <li><a href="#about" class="nav-btn">من نحن</a></li>
+                    <li><a href="#gallery" class="nav-btn">أعمالنا</a></li>
+                    <li><a href="#quote" class="nav-btn contact-special">تواصل معنا</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
 
-    <section class="hero" style="background: linear-gradient(rgba(0,10,30,0.7), rgba(0,10,30,0.7)), url('hero.jpg') no-repeat center center/cover;">
+    <section class="hero-main">
         <div class="hero-content">
             <h1 class="main-title">PORTIVA</h1>
             <p class="sub-logo-text">— LOGISTICS —</p>
-            <h2>نقل وتخليص جمركي بلا حدود</h2>
-            <p class="features">نحن نتحمل العبء.. أنت تحصد النجاح</p>
-            <a href="https://wa.me/201204646350" class="cta-btn">تواصل معنا الآن</a>
+            <h2>نقل وتخليص جمركي احترافي</h2>
+            <a href="#quote" class="cta-main">اطلب عرض سعر الآن</a>
         </div>
 
-        <div class="services-container" id="services">
+        <div class="services-overlap" id="services">
             <div class="services-grid">
                 <a href="customs.html" class="service-card">
                     <i class="fas fa-file-contract"></i>
                     <h4>التخليص الجمركي</h4>
-                    <p>من البوليصة حتى باب بيتك.. نخلصها لك بالحرف.</p>
+                    <p>نتابع الشحنة من البوليصة للباب.</p>
                 </a>
                 <a href="transport.html" class="service-card">
                     <i class="fas fa-truck-moving"></i>
                     <h4>النقل البري</h4>
-                    <p>أسطول كامل لتوصيل شحنتك بأمان لأي مكان.</p>
+                    <p>أمان وسرعة لكل المحافظات.</p>
                 </a>
                 <a href="shipping.html" class="service-card">
                     <i class="fas fa-ship"></i>
                     <h4>الشحن الدولي</h4>
-                    <p>بحر أو جو.. نوصلك لأبعد نقطة في العالم.</p>
+                    <p>أرخص نوالين شحن في مصر.</p>
                 </a>
                 <a href="consulting.html" class="service-card">
-                    <i class="fas fa-handshake"></i>
+                    <i class="fas fa-user-tie"></i>
                     <h4>استشارات لوجستية</h4>
-                    <p>خبرتنا في القوانين توفر عليك مبالغ ووقات طويل.</p>
+                    <p>خبرة السنين بين إيديك.</p>
                 </a>
             </div>
         </div>
+    </section>
+
+    <section class="about-us" id="about">
+        <h2>من نحن</h2>
+        <p>بورتيفا لوجستيكس هي شريكك الموثوق في عالم الشحن والتخليص. نحن نجمع بين الخبرة الميدانية والتكنولوجيا لضمان وصول بضائعك بأمان وفي أسرع وقت.</p>
     </section>
 
     <section class="work-gallery" id="gallery">
         <h2>أعمالنا من أرض الواقع</h2>
         <div class="gallery-grid">
-            <div class="img-box"><img src="./img1.jpg" onerror="this.src='https://via.placeholder.com/400x300?text=Check+Name+img1'"></div>
-            <div class="img-box"><img src="./img2.jpg" onerror="this.src='https://via.placeholder.com/400x300?text=Check+Name+img2'"></div>
-            <div class="img-box"><img src="./img3.jpg" onerror="this.src='https://via.placeholder.com/400x300?text=Check+Name+img3'"></div>
-            <div class="img-box"><img src="./img4.jpg" onerror="this.src='https://via.placeholder.com/400x300?text=Check+Name+img4'"></div>
-            <div class="img-box"><img src="./img5.jpg" onerror="this.src='https://via.placeholder.com/400x300?text=Check+Name+img5'"></div>
-            <div class="img-box"><img src="./img6.jpg" onerror="this.src='https://via.placeholder.com/400x300?text=Check+Name+img6'"></div>
-            <div class="img-box"><img src="./img7.jpg" onerror="this.src='https://via.placeholder.com/400x300?text=Check+Name+img7'"></div>
+            <div class="img-box"><img data-src="img1" class="auto-img" alt="Work 1"></div>
+            <div class="img-box"><img data-src="img2" class="auto-img" alt="Work 2"></div>
+            <div class="img-box"><img data-src="img3" class="auto-img" alt="Work 3"></div>
+            <div class="img-box"><img data-src="img4" class="auto-img" alt="Work 4"></div>
+            <div class="img-box"><img data-src="img5" class="auto-img" alt="Work 5"></div>
+            <div class="img-box"><img data-src="img6" class="auto-img" alt="Work 6"></div>
+            <div class="img-box"><img data-src="img7" class="auto-img" alt="Work 7"></div>
+        </div>
+    </section>
+
+    <section class="quote-form-section" id="quote">
+        <h2>طلب عرض سعر</h2>
+        <div class="form-container">
+            <input type="text" id="q-name" placeholder="الاسم الكامل">
+            <input type="text" id="q-phone" placeholder="رقم الموبايل">
+            <select id="q-type">
+                <option>نوع الخدمة</option>
+                <option>تخليص جمركي</option>
+                <option>نقل بري</option>
+                <option>شحن دولي</option>
+            </select>
+            <button onclick="sendQuote()">إرسال الطلب عبر واتساب <i class="fab fa-whatsapp"></i></button>
         </div>
     </section>
 
     <footer>
-        <div class="footer-content">
-            <div class="social-links">
-                <a href="https://wa.me/201204646350" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://www.facebook.com/share/1DwzpSXChW/" target="_blank"><i class="fab fa-facebook"></i></a>
+        <div class="footer-info">
+            <p>جميع الحقوق محفوظة لشركة بورتيفا لوجستيكس © 2026</p>
+            <p>portivalogistics1@gmail.com | +20 120 464 6350</p>
+            <div class="social">
+                <a href="https://www.facebook.com/share/1DwzpSXChW/"><i class="fab fa-facebook"></i></a>
+                <a href="https://wa.me/201204646350"><i class="fab fa-whatsapp"></i></a>
             </div>
-            <p>© 2026 Portiva Logistics. | portivalogistics1@gmail.com</p>
         </div>
     </footer>
+
+    <script>
+        // سكريبت حل مشكلة الصور الجذري
+        document.querySelectorAll('.auto-img').forEach(img => {
+            const baseName = img.getAttribute('data-src');
+            const extensions = ['jpg', 'JPG', 'png', 'jpeg'];
+            let found = false;
+            
+            extensions.forEach(ext => {
+                if(found) return;
+                const testImg = new Image();
+                testImg.src = baseName + '.' + ext;
+                testImg.onload = () => {
+                    img.src = testImg.src;
+                    found = true;
+                };
+            });
+        });
+
+        function sendQuote() {
+            const name = document.getElementById('q-name').value;
+            const phone = document.getElementById('q-phone').value;
+            const type = document.getElementById('q-type').value;
+            const text = `طلب عرض سعر جديد:%0Aالاسم: ${name}%0Aالموبايل: ${phone}%0Aالخدمة: ${type}`;
+            window.open(`https://wa.me/201204646350?text=${text}`, '_blank');
+        }
+    </script>
 </body>
 </html>
