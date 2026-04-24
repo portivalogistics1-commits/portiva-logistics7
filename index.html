@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portiva Logistics | القمة في الشحن</title>
+    <title>Portiva Logistics | الاحترافية في الشحن</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -34,7 +34,11 @@
             <p class="sub-logo-text">LOGISTICS</p>
             <div class="hero-line"></div>
             <h2>نقل وتخليص جمركي احترافي</h2>
-            <p class="slogan">نحن نتحمل العبء.. وأنت تحصد النجاح</p>
+            
+            <div class="slogan-container">
+                <p class="bouncing-slogan">نحن نتحمل العبء.. وأنت تحصد النجاح</p>
+            </div>
+
             <a href="#quote" class="cta-main">اطلب عرض سعر الآن +</a>
         </div>
 
@@ -109,6 +113,7 @@
     </footer>
 
     <script>
+        // سكريبت الصور السحري
         document.querySelectorAll('.auto-img').forEach(img => {
             const baseName = img.getAttribute('data-src');
             const extensions = ['jpg', 'JPG', 'png', 'jpeg'];
