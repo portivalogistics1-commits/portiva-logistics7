@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portiva Logistics | الاحترافية في الشحن</title>
+    <title>Portiva Logistics | القمة</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -18,11 +18,11 @@
             <div class="nav-container">
                 <div class="logo"><img src="logo.png" alt="Portiva"></div>
                 <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-links">الرئيسية</a></li>
-                    <li><a href="#services" class="nav-links">خدماتنا</a></li>
-                    <li><a href="#about" class="nav-links">من نحن</a></li>
-                    <li><a href="#gallery" class="nav-links">أعمالنا</a></li>
-                    <li><a href="#quote" class="nav-links contact-blue">تواصل معنا</a></li>
+                    <li><a href="index.html" class="nav-btn active">الرئيسية</a></li>
+                    <li><a href="#services" class="nav-btn">خدماتنا</a></li>
+                    <li><a href="#about" class="nav-btn">من نحن</a></li>
+                    <li><a href="#gallery" class="nav-btn">أعمالنا</a></li>
+                    <li><a href="#quote" class="nav-btn contact-blue">تواصل معنا</a></li>
                 </ul>
             </div>
         </nav>
@@ -30,16 +30,18 @@
 
     <section class="hero-main" style="background-image: url('hero.jpg');">
         <div class="hero-content">
-            <h1 class="main-title">PORTIVA</h1>
-            <p class="sub-logo-text">LOGISTICS</p>
-            <div class="hero-line"></div>
-            <h2>نقل وتخليص جمركي احترافي</h2>
-            
-            <div class="slogan-container">
-                <p class="bouncing-slogan">نحن نتحمل العبء.. وأنت تحصد النجاح</p>
+            <div class="brand-box">
+                <h1 class="main-title">PORTIVA</h1>
+                <h3 class="sub-logo-text">LOGISTICS</h3>
             </div>
-
-            <a href="#quote" class="cta-main">اطلب عرض سعر الآن +</a>
+            
+            <div class="hero-line"></div>
+            <h2>تخليص جمركي ونقل دولي</h2>
+            
+            <div class="action-box">
+                <p class="bouncing-text">نحن نتحمل العبء.. وأنت تحصد النجاح</p>
+                <a href="#quote" class="cta-main">اطلب عرض سعر الآن +</a>
+            </div>
         </div>
 
         <div class="services-overlap" id="services">
@@ -47,7 +49,7 @@
                 <a href="customs.html" class="service-card">
                     <i class="fas fa-file-contract"></i>
                     <h4>التخليص الجمركي</h4>
-                    <p>نتابع الشحنة من البوليصة للباب.</p>
+                    <p>من البوليصة حتى باب بيتك.</p>
                 </a>
                 <a href="transport.html" class="service-card">
                     <i class="fas fa-truck-moving"></i>
@@ -57,7 +59,7 @@
                 <a href="shipping.html" class="service-card">
                     <i class="fas fa-ship"></i>
                     <h4>الشحن الدولي</h4>
-                    <p>أرخص نوالين شحن في مصر.</p>
+                    <p>أرخص نوالين شحن دولي.</p>
                 </a>
                 <a href="consulting.html" class="service-card">
                     <i class="fas fa-user-tie"></i>
@@ -71,7 +73,7 @@
     <section class="about-us" id="about">
         <div class="container">
             <h2>من نحن</h2>
-            <p>بورتيفا لوجستيكس هي شريكك الموثوق في عالم الشحن والتخليص. نحن نجمع بين الخبرة الميدانية والتكنولوجيا لضمان وصول بضائعك بأمان وفي أسرع وقت.</p>
+            <p>بورتيفا لوجستيكس هي شريكك الموثوق، نضمن وصول بضائعك بأمان وفي أسرع وقت ممكن وبأقل تكلفة جمركية.</p>
         </div>
     </section>
 
@@ -89,7 +91,7 @@
     </section>
 
     <section class="quote-form-section" id="quote">
-        <h2>طلب عرض سعر</h2>
+        <h2>طلب عرض سعر سريع</h2>
         <div class="form-container">
             <input type="text" id="q-name" placeholder="الاسم الكامل">
             <input type="text" id="q-phone" placeholder="رقم الموبايل">
@@ -99,21 +101,19 @@
                 <option>نقل بري</option>
                 <option>شحن دولي</option>
             </select>
-            <button onclick="sendQuote()">إرسال الطلب عبر واتساب <i class="fab fa-whatsapp"></i></button>
+            <button onclick="sendQuote()">إرسال الطلب <i class="fab fa-whatsapp"></i></button>
         </div>
     </section>
 
     <footer>
-        <p>جميع الحقوق محفوظة لشركة بورتيفا لوجستيكس © 2026</p>
-        <p>portivalogistics1@gmail.com | +20 120 464 6350</p>
         <div class="social">
             <a href="https://www.facebook.com/share/1DwzpSXChW/"><i class="fab fa-facebook"></i></a>
             <a href="https://wa.me/201204646350"><i class="fab fa-whatsapp"></i></a>
         </div>
+        <p>© 2026 Portiva Logistics</p>
     </footer>
 
     <script>
-        // سكريبت الصور السحري
         document.querySelectorAll('.auto-img').forEach(img => {
             const baseName = img.getAttribute('data-src');
             const extensions = ['jpg', 'JPG', 'png', 'jpeg'];
@@ -130,7 +130,7 @@
             const name = document.getElementById('q-name').value;
             const phone = document.getElementById('q-phone').value;
             const type = document.getElementById('q-type').value;
-            const text = `طلب عرض سعر جديد:%0Aالاسم: ${name}%0Aالموبايل: ${phone}%0Aالخدمة: ${type}`;
+            const text = `طلب جديد من الموقع:%0Aالاسم: ${name}%0Aالموبايل: ${phone}%0Aالخدمة: ${type}`;
             window.open(`https://wa.me/201204646350?text=${text}`, '_blank');
         }
     </script>
