@@ -1,8 +1,8 @@
 :root { --blue: #007bff; --dark: #000c1d; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Cairo', sans-serif; direction: rtl; overflow-x: hidden; }
+body { font-family: 'Cairo', sans-serif; direction: rtl; overflow-x: hidden; background: #fff; }
 
-/* Navbar Buttons */
+/* Navbar */
 nav { background: rgba(0, 12, 29, 0.98); padding: 10px 0; position: fixed; width: 100%; top: 0; z-index: 2000; border-bottom: 2px solid var(--blue); }
 .nav-container { width: 92%; margin: auto; display: flex; justify-content: space-between; align-items: center; }
 .nav-menu { display: flex; list-style: none; gap: 8px; }
@@ -11,37 +11,41 @@ nav { background: rgba(0, 12, 29, 0.98); padding: 10px 0; position: fixed; width
 .logo img { height: 40px; }
 
 /* Hero */
-.hero-main { height: 100vh; background-size: cover; background-position: center; position: relative; }
+.hero-main, .hero-sub { height: 100vh; background-size: cover; background-position: center; position: relative; background-image: url('hero.jpg'); }
 .brand-side-left { position: absolute; left: 5%; top: 20%; text-align: left; }
 .main-title { font-size: 65px; font-weight: 900; color: white; line-height: 1; }
 .sub-logo-text { font-size: 55px; color: var(--blue); font-weight: bold; }
-.hero-line { width: 120px; height: 4px; background: var(--blue); margin: 10px 0; }
 
-/* الجملة في الدائرة الخضراء (يمين شوية فوق النقل البري) */
-@keyframes bounceAction { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
-.action-in-green-circle {
-    position: absolute;
-    right: 28%; /* مكان الدائرة الخضراء بالظبط */
-    bottom: 220px; 
-    text-align: center;
-    animation: bounceAction 2.5s infinite ease-in-out;
+/* الجملة والزرار - المكان المظبوط */
+@keyframes bounceFinal { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+.action-target-area {
+    position: absolute; right: 28%; bottom: 230px; /* فوق كارت النقل البري بظبط */
+    text-align: center; animation: bounceFinal 2.5s infinite ease-in-out; z-index: 100;
 }
-.bouncing-text { font-size: 22px; color: var(--blue); font-weight: bold; background: white; padding: 5px 15px; border-radius: 5px; margin-bottom: 10px; display: inline-block; }
+.bouncing-text { font-size: 20px; color: var(--blue); font-weight: bold; background: white; padding: 5px 15px; border-radius: 5px; margin-bottom: 10px; display: inline-block; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
 .cta-main-box { background: var(--blue); color: white; padding: 12px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; border: 2px solid white; display: inline-block; }
 
-/* الكروت */
+/* الكروت الزرقاء */
 .services-overlap { position: absolute; bottom: -45px; width: 90%; left: 50%; transform: translateX(-50%); }
 .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
 .service-card { background: rgba(0, 15, 35, 0.95); padding: 25px 10px; border-radius: 8px; color: white; text-decoration: none; text-align: center; border: 1px solid var(--blue); }
-.service-card i { font-size: 30px; color: var(--blue); margin-bottom: 10px; display: block; }
+.service-card h4 { margin: 10px 0; color: var(--blue); }
+.service-card p { font-size: 12px; opacity: 0.8; }
+.service-card i { font-size: 30px; color: var(--blue); }
 
-/* الصور الصغيرة (Grid ثابت) */
+/* الجاليري الصغير الثابت */
 .work-gallery { padding: 120px 5% 50px; text-align: center; }
-.gallery-title { margin-bottom: 30px; font-size: 24px; color: var(--dark); font-weight: bold; }
 .gallery-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; }
-.img-box { height: 130px; border-radius: 5px; overflow: hidden; border: 1px solid #ddd; }
-.img-box img { width: 100%; height: 100%; object-fit: cover; }
+.img-box { height: 140px; border-radius: 5px; overflow: hidden; display: block; }
+.img-box img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
+/* الفوتر والواتساب */
+.quote-form-section { padding: 60px 5%; background: var(--dark); text-align: center; }
+.form-container input { padding: 12px; border-radius: 5px; border: none; margin: 5px; min-width: 200px; }
+.form-container button { padding: 12px 30px; background: var(--blue); color: white; border: none; border-radius: 5px; cursor: pointer; }
 footer { background: #000; color: white; padding: 30px; text-align: center; }
 .social a { color: white; font-size: 25px; margin: 0 10px; }
 .whatsapp-float { position: fixed; bottom: 20px; left: 20px; background: #25d366; color: white; width: 55px; height: 55px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 28px; z-index: 3000; }
+
+/* صفحات الخدمات (الهيرو جواها) */
+.sub-content-box { background: rgba(0, 12, 29, 0.9); padding: 50px; border-radius: 15px; max-width: 800px; text-align: center; border: 2px solid var(--blue); margin: auto; margin-top: 100px; color: white; }
