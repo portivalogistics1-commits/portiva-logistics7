@@ -28,13 +28,14 @@
         /* الجملة السحرية (شفافة تماماً) */
         @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
         .magic-box { 
-            position: absolute; top: 40%; left: 50%; transform: translateX(-50%); 
-            background: rgba(255, 255, 255, 0.1); /* شفاف زي اللي فوق */
-            backdrop-filter: blur(8px); 
-            padding: 30px; border: 3px solid var(--blue); border-radius: 15px; 
-            text-align: center; z-index: 100; animation: bounce 3s infinite ease-in-out;
-            box-shadow: 0 0 30px rgba(0, 123, 255, 0.3);
-        }
+position: absolute !important;
+        bottom: 50px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        top: auto !important;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(8px);
+        padding: 30px;
         .magic-text { color: white; font-size: 22px; font-weight: bold; margin-bottom: 15px; text-shadow: 2px 2px 10px #000; }
         .quote-btn { background: var(--blue); color: white; text-decoration: none; padding: 12px 25px; border-radius: 8px; font-weight: bold; border: 2px solid white; transition: 0.3s; }
         .quote-btn:hover { background: white; color: var(--blue); }
