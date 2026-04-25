@@ -25,7 +25,7 @@
         .brand-left h1 { font-size: 70px; color: white; line-height: 0.8; font-weight: 900; }
         .brand-left span { font-size: 55px; color: var(--blue); font-weight: bold; }
 
-        /* الجملة السحرية - تم ضبط مكانها أسفل الهيرو مباشرة */
+        /* الجملة السحرية */
         @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
         .magic-box { 
             position: absolute !important;
@@ -45,7 +45,7 @@
         .quote-btn { background: var(--blue); color: white; text-decoration: none; padding: 12px 25px; border-radius: 8px; font-weight: bold; border: 2px solid white; transition: 0.3s; display: inline-block; }
         .quote-btn:hover { background: white; color: var(--blue); }
 
-        /* الأيقونات الزرقاء (الخدمات) - تصحيح المقاسات والشكل */
+        /* الأيقونات الزرقاء (الخدمات) */
         .services-overlap { position: absolute; bottom: -60px; width: 90%; left: 50%; transform: translateX(-50%); z-index: 600; }
         .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
         .service-card { background: rgba(0, 12, 29, 0.95); padding: 25px 15px; border-radius: 12px; color: white; text-decoration: none; text-align: center; border: 1px solid var(--blue); transition: 0.3s; }
@@ -82,61 +82,8 @@
             .brand-left span { font-size: 30px; }
             .magic-box { bottom: 200px !important; }
         }
-<script>
-    // المبرمج الصياد - بيدور في كل الاحتمالات عشان يضمن ظهور صورك السبعة
-    const galleryContainer = document.getElementById('smart-gallery');
-    const totalImages = 7;
-    const namesToTry = ['img', 'IMG', 'image', 'pic', 'work']; // جرب كل الأسامي دي
-    const extsToTry = ['jpg', 'png', 'jpeg', 'webp', 'JPG'];    // جرب كل الامتدادات دي
-
-    async function huntImages() {
-        if (!galleryContainer) return;
-        galleryContainer.innerHTML = ''; // تنظيف الجاليري للبدء
-
-        for (let i = 1; i <= totalImages; i++) {
-            const box = document.createElement('div');
-            box.className = 'img-box';
-            const img = document.createElement('img');
-            
-            let found = false;
-
-            // المبرمج بيلف على كل الاحتمالات لكل صورة
-            for (let name of namesToTry) {
-                for (let ext of extsToTry) {
-                    if (found) break;
-                    
-                    const testPath = `${name}${i}.${ext}`;
-                    
-                    const isExist = await new Promise((resolve) => {
-                        const t = new Image();
-                        t.src = testPath;
-                        t.onload = () => resolve(true);
-                        t.onerror = () => resolve(false);
-                    });
-
-                    if (isExist) {
-                        img.src = testPath;
-                        found = true;
-                    }
-                }
-            }
-
-            if (!found) {
-                box.style.display = 'flex';
-                box.style.alignItems = 'center';
-                box.style.justifyContent = 'center';
-                box.innerHTML = '<i class="fas fa-image" style="color: #007bff; opacity: 0.3;"></i>';
-            } else {
-                box.appendChild(img);
-            }
-            
-            galleryContainer.appendChild(box);
-        }
-    }
-
-    // تشغيل المبرمج أول ما الصفحة تجهز
-    document.addEventListener('DOMContentLoaded', huntImages);
-</script></head>
+    </style>
+</head>
 <body>
 
     <a href="https://wa.me/201204646350" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
@@ -221,79 +168,53 @@
     </footer>
 
     <script>
+        // المبرمج الصياد - النسخة النهائية المظبوطة
         const galleryContainer = document.getElementById('smart-gallery');
         const totalImages = 7;
+        const namesToTry = ['img', 'IMG', 'image', 'pic', 'work']; 
+        const extsToTry = ['jpg', 'png', 'jpeg', 'webp', 'JPG'];
+
         async function huntImages() {
-            galleryContainer.innerHTML = '';
+            if (!galleryContainer) return;
+            galleryContainer.innerHTML = ''; 
+
             for (let i = 1; i <= totalImages; i++) {
                 const box = document.createElement('div');
                 box.className = 'img-box';
                 const img = document.createElement('img');
-                img.src = `img${i}.jpg`; 
-                img.onerror = () => {
+                
+                let found = false;
+
+                for (let name of namesToTry) {
+                    for (let ext of extsToTry) {
+                        if (found) break;
+                        const testPath = `${name}${i}.${ext}`;
+                        
+                        const isExist = await new Promise((resolve) => {
+                            const t = new Image();
+                            t.src = testPath;
+                            t.onload = () => resolve(true);
+                            t.onerror = () => resolve(false);
+                        });
+
+                        if (isExist) {
+                            img.src = testPath;
+                            found = true;
+                        }
+                    }
+                }
+
+                if (!found) {
                     box.style.display = 'flex';
                     box.style.alignItems = 'center';
                     box.style.justifyContent = 'center';
                     box.innerHTML = '<i class="fas fa-image" style="color: #007bff; opacity: 0.3;"></i>';
-                };
-                box.appendChild(img);
+                } else {
+                    box.appendChild(img);
+                }
                 galleryContainer.appendChild(box);
             }
         }
         document.addEventListener('DOMContentLoaded', huntImages);
-<script>
-    // المبرمج الصياد - النسخة المطورة لضمان ظهور صورك الـ 7
-    const galleryContainer = document.getElementById('smart-gallery');
-    const totalImages = 7;
-    const namesToTry = ['img', 'IMG', 'image', 'pic', 'work']; 
-    const extsToTry = ['jpg', 'png', 'jpeg', 'webp', 'JPG'];
-
-    async function huntImages() {
-        galleryContainer.innerHTML = ''; 
-
-        for (let i = 1; i <= totalImages; i++) {
-            const box = document.createElement('div');
-            box.className = 'img-box';
-            const img = document.createElement('img');
-            
-            let found = false;
-
-            // المبرمج بيلف على كل الاحتمالات لكل صورة عشان ميفوتش واحدة
-            for (let name of namesToTry) {
-                for (let ext of extsToTry) {
-                    if (found) break;
-                    
-                    const testPath = `${name}${i}.${ext}`;
-                    
-                    const isExist = await new Promise((resolve) => {
-                        const t = new Image();
-                        t.src = testPath;
-                        t.onload = () => resolve(true);
-                        t.onerror = () => resolve(false);
-                    });
-
-                    if (isExist) {
-                        img.src = testPath;
-                        found = true;
-                    }
-                }
-            }
-
-            if (!found) {
-                // لو الصورة مش موجودة بيدي شكل جمالي بدل الفراغ
-                box.style.display = 'flex';
-                box.style.alignItems = 'center';
-                box.style.justifyContent = 'center';
-                box.innerHTML = '<i class="fas fa-image" style="color: #007bff; opacity: 0.3;"></i>';
-            } else {
-                box.appendChild(img);
-            }
-            
-            galleryContainer.appendChild(box);
-        }
-    }
-
-    document.addEventListener('DOMContentLoaded', huntImages);
-</script>
+    </script>
 </body>
-</html>
