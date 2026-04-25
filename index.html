@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portiva Logistics</title>
+    <title>Portiva Logistics | القمة في الخدمات اللوجستية</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -48,22 +48,22 @@
                 <a href="customs.html" class="service-card">
                     <i class="fas fa-file-contract"></i>
                     <h4>التخليص الجمركي</h4>
-                    <p>دقة وسرعة في كافة الموانئ</p>
+                    <p>دقة وسرعة في كافة الموانئ المصرية</p>
                 </a>
                 <a href="transport.html" class="service-card">
                     <i class="fas fa-truck-moving"></i>
                     <h4>النقل البري</h4>
-                    <p>أسطول نقل حديث لكل مصر</p>
+                    <p>أسطول نقل حديث يغطي كافة المحافظات</p>
                 </a>
                 <a href="shipping.html" class="service-card">
                     <i class="fas fa-ship"></i>
                     <h4>الشحن الدولي</h4>
-                    <p>أفضل نوالين الشحن الدولي</p>
+                    <p>أفضل نوالين الشحن البحري والجوي</p>
                 </a>
                 <a href="consulting.html" class="service-card">
                     <i class="fas fa-user-tie"></i>
                     <h4>استشارات لوجستية</h4>
-                    <p>حلول ذكية لتطوير أعمالك</p>
+                    <p>حلول ذكية لتطوير أعمالك التجارية</p>
                 </a>
             </div>
         </div>
@@ -71,31 +71,58 @@
 
     <section class="about-section" id="about">
         <div class="container">
-            <h2>من نحن</h2>
-            <p>بورتيفا لوجستيكس هي شريكك الموثوق في تقديم حلول الشحن والتخليص الجمركي المتكاملة. نحن نسعى لتسهيل حركة تجارتك عالمياً بأقل التكاليف وأعلى جودة، مع فريق من الخبراء في قلب الموانئ المصرية.</p>
+            <h2 class="section-title">من نحن</h2>
+            <p class="about-p">بورتيفا لوجستيكس هي شريكك الموثوق في تقديم حلول الشحن والتخليص الجمركي المتكاملة. نحن نسعى لتسهيل حركة تجارتك عالمياً بأقل التكاليف وأعلى جودة، مع فريق من الخبراء في قلب الموانئ المصرية يضمن لك الأمان والسرعة.</p>
+        </div>
+    </section>
+
+    <section class="quote-section" id="quote">
+        <div class="form-container">
+            <h3>أرسل طلبك الآن</h3>
+            <form>
+                <input type="text" placeholder="الاسم بالكامل" required>
+                <input type="tel" placeholder="رقم الهاتف" required>
+                <select required>
+                    <option value="" disabled selected>نوع الخدمة المطلوبة</option>
+                    <option>تخليص جمركي</option>
+                    <option>نقل بري</option>
+                    <option>شحن دولي</option>
+                    <option>استشارات</option>
+                </select>
+                <textarea placeholder="تفاصيل الشحنة"></textarea>
+                <button type="submit" class="submit-btn">إرسال الطلب</button>
+            </form>
         </div>
     </section>
 
     <section class="work-gallery" id="gallery">
         <h2 class="gallery-title">أعمالنا من أرض الواقع</h2>
-        <div class="gallery-grid">
-            <div class="img-box"><img src="img1.jpg" onerror="this.src='https://via.placeholder.com/400x300/000c1d/007bff?text=Portiva+1'"></div>
-            <div class="img-box"><img src="img2.jpg" onerror="this.src='https://via.placeholder.com/400x300/000c1d/007bff?text=Portiva+2'"></div>
-            <div class="img-box"><img src="img3.jpg" onerror="this.src='https://via.placeholder.com/400x300/000c1d/007bff?text=Portiva+3'"></div>
-            <div class="img-box"><img src="img4.jpg" onerror="this.src='https://via.placeholder.com/400x300/000c1d/007bff?text=Portiva+4'"></div>
-            <div class="img-box"><img src="img5.jpg" onerror="this.src='https://via.placeholder.com/400x300/000c1d/007bff?text=Portiva+5'"></div>
-            <div class="img-box"><img src="img6.jpg" onerror="this.src='https://via.placeholder.com/400x300/000c1d/007bff?text=Portiva+6'"></div>
-            <div class="img-box"><img src="img7.jpg" onerror="this.src='https://via.placeholder.com/400x300/000c1d/007bff?text=Portiva+7'"></div>
-        </div>
+        <div class="gallery-grid" id="smart-gallery"></div>
     </section>
 
     <footer>
         <p>جميع الحقوق محفوظة لشركة بورتيفا لوجستيكس © 2026</p>
         <div class="social">
-            <a href="https://www.facebook.com/share/1DwzpSXChW/" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://wa.me/201204646350" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.facebook.com/share/1DwzpSXChW/" target="_blank"><i class="fab fa-facebook"></i> فيسبوك</a>
+            <a href="https://wa.me/201204646350" target="_blank"><i class="fab fa-whatsapp"></i> واتساب</a>
         </div>
     </footer>
 
+    <script>
+        // المبرمج القوي للبحث عن الـ 7 صور
+        const gallery = document.getElementById('smart-gallery');
+        for (let i = 1; i <= 7; i++) {
+            let imgContainer = document.createElement('div');
+            imgContainer.className = 'img-box';
+            let finalImg = document.createElement('img');
+            // بيجرب يفتح الصور من 1 لـ 7
+            finalImg.src = 'img' + i + '.jpg'; 
+            finalImg.onerror = function() { 
+                this.src = 'https://via.placeholder.com/400x300/000c1d/007bff?text=Portiva+Logistics+' + i; 
+            };
+            imgContainer.appendChild(finalImg);
+            gallery.appendChild(imgContainer);
+        }
+    </script>
 </body>
 </html>
