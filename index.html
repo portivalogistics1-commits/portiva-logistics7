@@ -159,17 +159,59 @@
         <p>© 2026 جميع الحقوق محفوظة لشركة بورتيفا لوجستيكس</p>
     </footer>
 
-    <script>
-        const gallery = document.getElementById('smart-gallery');
-        for (let i = 1; i <= 7; i++) {
+  <script>
+    // المبرمج الصياد - بيدور في كل الاحتمالات عشان يضمن ظهور صورك السبعة
+    const galleryContainer = document.getElementById('smart-gallery');
+    const totalImages = 7;
+    const namesToTry = ['img', 'IMG', 'image', 'pic', 'work']; // جرب كل الأسامي دي
+    const extsToTry = ['jpg', 'png', 'jpeg', 'webp', 'JPG'];    // جرب كل الامتدادات دي
+
+    async function huntImages() {
+        galleryContainer.innerHTML = ''; // تنظيف الجاليري للبدء
+
+        for (let i = 1; i <= totalImages; i++) {
             const box = document.createElement('div');
             box.className = 'img-box';
             const img = document.createElement('img');
-            img.src = 'img' + i + '.jpg';
-            img.onerror = function() { this.src = 'https://via.placeholder.com/400x300/000c1d/007bff?text=Portiva+' + i; };
-            box.appendChild(img);
-            gallery.appendChild(box);
+            
+            let found = false;
+
+            // المبرمج بيلف على كل الاحتمالات لكل صورة
+            for (let name of namesToTry) {
+                for (let ext of extsToTry) {
+                    if (found) break;
+                    
+                    const testPath = `${name}${i}.${ext}`;
+                    
+                    // اختبار وجود الصورة فعلياً
+                    const isExist = await new Promise((resolve) => {
+                        const t = new Image();
+                        t.src = testPath;
+                        t.onload = () => resolve(true);
+                        t.onerror = () => resolve(false);
+                    });
+
+                    if (isExist) {
+                        img.src = testPath;
+                        found = true;
+                    }
+                }
+            }
+
+            // لو ملقاش الصورة خالص مش هيحط Placeholder عبيط، هيسيب المربع بلمحة زرقاء خفيفة
+            if (!found) {
+                box.style.display = 'flex';
+                box.style.alignItems = 'center';
+                box.style.justifyContent = 'center';
+                box.innerHTML = '<i class="fas fa-image" style="color: #007bff; opacity: 0.3;"></i>';
+            } else {
+                box.appendChild(img);
+            }
+            
+            galleryContainer.appendChild(box);
         }
-    </script>
-</body>
-</html>
+    }
+
+    // تشغيل المبرمج أول ما الصفحة تجهز
+    document.addEventListener('DOMContentLoaded', huntImages);
+</script>
