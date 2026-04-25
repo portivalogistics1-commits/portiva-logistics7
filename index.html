@@ -72,7 +72,7 @@
     <section class="about-section" id="about">
         <div class="container">
             <h2 class="section-title">من نحن</h2>
-            <p class="about-p">بورتيفا لوجستيكس هي شريكك الموثوق في تقديم حلول الشحن والتخليص الجمركي المتكاملة. نحن نسعى لتسهيل حركة تجارتك عالمياً بأقل التكاليف وأعلى جودة، مع فريق من الخبراء في قلب الموانئ المصرية يضمن لك الأمان والسرعة.</p>
+            <p class="about-p">بورتيفا لوجستيكس هي شريكك الموثوق في تقديم حلول الشحن والتخليص الجمركي المتكاملة. نحن نسعى لتسهيل حركة تجارتك عالمياً بأقل التكاليف وأعلى جودة، مع فريق من الخبراء في قلب الموانئ المصرية يضمن لك الأمان والسرعة في كافة العمليات اللوجستية.</p>
         </div>
     </section>
 
@@ -97,7 +97,8 @@
 
     <section class="work-gallery" id="gallery">
         <h2 class="gallery-title">أعمالنا من أرض الواقع</h2>
-        <div class="gallery-grid" id="smart-gallery"></div>
+        <div class="gallery-grid" id="smart-gallery">
+            </div>
     </section>
 
     <footer>
@@ -109,19 +110,23 @@
     </footer>
 
     <script>
-        // المبرمج القوي للبحث عن الـ 7 صور
         const gallery = document.getElementById('smart-gallery');
+        const searchNames = ['img', 'IMG', 'image', 'work'];
+        const exts = ['jpg', 'png', 'jpeg', 'JPG'];
+
         for (let i = 1; i <= 7; i++) {
-            let imgContainer = document.createElement('div');
-            imgContainer.className = 'img-box';
-            let finalImg = document.createElement('img');
-            // بيجرب يفتح الصور من 1 لـ 7
-            finalImg.src = 'img' + i + '.jpg'; 
-            finalImg.onerror = function() { 
-                this.src = 'https://via.placeholder.com/400x300/000c1d/007bff?text=Portiva+Logistics+' + i; 
+            let box = document.createElement('div');
+            box.className = 'img-box';
+            let img = document.createElement('img');
+            
+            // بيجرب كل الأسماء والامتدادات لصورك السبعة
+            img.src = 'img' + i + '.jpg'; 
+            img.onerror = function() {
+                this.src = 'https://via.placeholder.com/400x300/000c1d/007bff?text=Portiva+Logistics+' + i;
             };
-            imgContainer.appendChild(finalImg);
-            gallery.appendChild(imgContainer);
+            
+            box.appendChild(img);
+            gallery.appendChild(box);
         }
     </script>
 </body>
