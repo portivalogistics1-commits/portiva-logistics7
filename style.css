@@ -27,7 +27,7 @@ nav.pure-transparent { background: transparent; padding: 15px 0; position: absol
 /* الجملة السحرية المربعة في النص */
 @keyframes squareBouncing { 0%, 100% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, -15px); } }
 .magic-center-container {
-    position: absolute; left: 50%; bottom: 230px; 
+    position: absolute; left: 50%; bottom: 130px;
     transform: translateX(-50%); z-index: 100;
     animation: squareBouncing 2.5s infinite ease-in-out;
 }
