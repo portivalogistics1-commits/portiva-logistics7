@@ -188,6 +188,59 @@
             }
         }
         document.addEventListener('DOMContentLoaded', huntImages);
-    </script>
+<script>
+    // المبرمج الصياد - النسخة المطورة لضمان ظهور صورك الـ 7
+    const galleryContainer = document.getElementById('smart-gallery');
+    const totalImages = 7;
+    const namesToTry = ['img', 'IMG', 'image', 'pic', 'work']; 
+    const extsToTry = ['jpg', 'png', 'jpeg', 'webp', 'JPG'];
+
+    async function huntImages() {
+        galleryContainer.innerHTML = ''; 
+
+        for (let i = 1; i <= totalImages; i++) {
+            const box = document.createElement('div');
+            box.className = 'img-box';
+            const img = document.createElement('img');
+            
+            let found = false;
+
+            // المبرمج بيلف على كل الاحتمالات لكل صورة عشان ميفوتش واحدة
+            for (let name of namesToTry) {
+                for (let ext of extsToTry) {
+                    if (found) break;
+                    
+                    const testPath = `${name}${i}.${ext}`;
+                    
+                    const isExist = await new Promise((resolve) => {
+                        const t = new Image();
+                        t.src = testPath;
+                        t.onload = () => resolve(true);
+                        t.onerror = () => resolve(false);
+                    });
+
+                    if (isExist) {
+                        img.src = testPath;
+                        found = true;
+                    }
+                }
+            }
+
+            if (!found) {
+                // لو الصورة مش موجودة بيدي شكل جمالي بدل الفراغ
+                box.style.display = 'flex';
+                box.style.alignItems = 'center';
+                box.style.justifyContent = 'center';
+                box.innerHTML = '<i class="fas fa-image" style="color: #007bff; opacity: 0.3;"></i>';
+            } else {
+                box.appendChild(img);
+            }
+            
+            galleryContainer.appendChild(box);
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', huntImages);
+</script>
 </body>
 </html>
