@@ -1,21 +1,324 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <title>استشارات لوجستية | Lumix Logistics</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-</head>
-<body>
-    <section class="hero-sub">
-        <div class="sub-content-box">
-            <i class="fas fa-user-tie" style="font-size: 50px; color: #007bff; margin-bottom: 20px;"></i>
-            <h1 style="color: #007bff; font-size: 40px; margin-bottom: 20px;">استشارات لوجستية</h1>
-            <p style="font-size: 20px; line-height: 1.8; color: #fff;">
-                متخليش بنود التعريفة الجمركية تحيرك. إحنا بنقدملك دراسة كاملة لشحنتك قبل ما تتحرك، وبنساعدك تختار أنسب طريقة استيراد توفر لك فلوسك وتضمن قانونية وضعك الجمركي 100%.
-            </p>
-            <a href="index.html" class="nav-square-btn active" style="display:inline-block; margin-top:30px; text-decoration: none;">العودة للرئيسية</a>
-        </div>
-    </section>
-</body>
-</html>
+:root { 
+    --blue: #007bff; 
+    --dark: #000c1d; 
+}
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+body { 
+    font-family: 'Cairo', sans-serif; 
+    direction: rtl; 
+    background-color: #fff;
+}
+
+/* Navbar شفاف وأيقونات مربعة */
+nav.pure-transparent { 
+    background: transparent; 
+    padding: 15px 0; 
+    position: absolute; 
+    width: 100%; 
+    z-index: 1000; 
+}
+
+.nav-container { 
+    width: 92%; 
+    margin: auto; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+.nav-menu { 
+    display: flex; 
+    list-style: none; 
+    gap: 10px; 
+}
+
+.nav-square-btn { 
+    background: rgba(0, 123, 255, 0.1); 
+    color: #ffffff; 
+    text-decoration: none; 
+    padding: 10px 15px; 
+    border: 1px solid var(--blue); 
+    border-radius: 4px; 
+    font-size: 13px; 
+    transition: all 0.3s ease;
+}
+
+.nav-square-btn:hover, 
+.nav-square-btn.active { 
+    background: var(--blue); 
+    box-shadow: 0 0 15px var(--blue); 
+}
+
+.logo img { 
+    height: 40px; 
+    width: auto;
+}
+
+/* Hero Section */
+.hero-main { 
+    height: 100vh; 
+    background-size: cover; 
+    background-position: center; 
+    position: relative; 
+}
+
+.brand-side-left { 
+    position: absolute; 
+    left: 5%; 
+    top: 20%; 
+    text-align: left; 
+}
+
+.main-title { 
+    font-size: 60px; 
+    font-weight: 900; 
+    color: #ffffff; 
+    line-height: 1; 
+}
+
+.sub-logo-text { 
+    font-size: 50px; 
+    color: var(--blue); 
+    font-weight: bold; 
+}
+
+/* الجملة السحرية المربعة */
+@keyframes squareBouncing { 
+    0%, 100% { transform: translate(-50%, 0); } 
+    50% { transform: translate(-50%, -15px); } 
+}
+
+.magic-center-container {
+    position: absolute; 
+    left: 50%; 
+    bottom: 50px;
+    transform: translateX(-50%); 
+    z-index: 100;
+    animation: squareBouncing 2.5s infinite ease-in-out;
+}
+
+.bouncing-square-box {
+    background: rgba(255, 255, 255, 0.98); 
+    padding: 25px;
+    border: 3px solid var(--blue); 
+    border-radius: 12px;
+    text-align: center; 
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+}
+
+.magic-text { 
+    font-size: 19px; 
+    color: var(--dark); 
+    font-weight: bold; 
+    margin-bottom: 12px; 
+}
+
+.cta-with-icon { 
+    background: var(--blue); 
+    color: #ffffff; 
+    text-decoration: none; 
+    padding: 12px 25px; 
+    border-radius: 6px; 
+    font-weight: bold; 
+    border: 2px solid #ffffff; 
+    display: inline-block; 
+    transition: all 0.3s ease; 
+}
+
+.cta-with-icon:hover { 
+    background: #ffffff; 
+    color: var(--blue); 
+}
+
+/* الأيقونات الزرقاء (الخدمات) */
+.services-overlap { 
+    position: absolute; 
+    bottom: -45px; 
+    width: 94%; 
+    left: 50%; 
+    transform: translateX(-50%); 
+}
+
+.services-grid { 
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 10px; 
+}
+
+.service-card { 
+    background: rgba(0, 15, 35, 0.95); 
+    padding: 25px 10px; 
+    border-radius: 8px; 
+    color: #ffffff; 
+    text-decoration: none; 
+    text-align: center; 
+    border: 1px solid var(--blue); 
+    transition: all 0.3s ease;
+}
+
+.service-card:hover { 
+    transform: translateY(-5px); 
+    border-color: #ffffff; 
+}
+
+.service-card i { 
+    font-size: 32px; 
+    color: var(--blue); 
+    margin-bottom: 10px; 
+    display: block; 
+}
+
+.service-card h4 { 
+    color: var(--blue); 
+    margin-bottom: 5px; 
+    font-size: 16px; 
+}
+
+.service-card p { 
+    font-size: 11px; 
+    opacity: 0.9; 
+    color: #cccccc; 
+}
+
+/* معرض الصور */
+.work-gallery { 
+    padding: 130px 5% 50px; 
+    text-align: center; 
+}
+
+.gallery-grid { 
+    display: grid; 
+    grid-template-columns: repeat(7, 1fr); 
+    gap: 8px; 
+}
+
+.img-box { 
+    height: 120px; 
+    border-radius: 5px; 
+    overflow: hidden; 
+    border: 2px solid var(--blue); 
+    background: #eeeeee; 
+}
+
+.img-box img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+}
+
+/* الصفحات الفرعية */
+.hero-sub { 
+    height: 100vh; 
+    background-size: cover; 
+    background-position: center; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    background-image: url('hero.jpg'); 
+}
+
+.sub-content-box { 
+    background: rgba(0, 12, 29, 0.92); 
+    padding: 50px; 
+    border-radius: 15px; 
+    border: 2px solid var(--blue); 
+    color: #ffffff; 
+    text-align: center; 
+    max-width: 800px; 
+    width: 90%;
+}
+
+/* الفوتر والتواصل */
+footer {
+    background: var(--dark);
+    color: #ffffff;
+    padding: 50px 10% 20px;
+    text-align: center;
+    border-top: 5px solid var(--blue);
+}
+
+footer h3 {
+    color: var(--blue);
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.contact-item {
+    color: #ffffff;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.contact-item i {
+    font-size: 30px;
+    color: var(--blue);
+}
+
+.contact-item span {
+    font-size: 14px;
+}
+
+.contact-item:hover {
+    transform: translateY(-5px);
+    color: var(--blue);
+}
+
+/* زر الواتساب العائم */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    background: #25d366;
+    color: #ffffff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    z-index: 3000;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+/* الاستجابة للشاشات الصغيرة (Responsive Design) */
+@media (max-width: 992px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .gallery-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .main-title { font-size: 40px; }
+    .sub-logo-text { font-size: 32px; }
+    .services-grid { grid-template-columns: 1fr; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .sub-content-box { padding: 25px; }
+}
