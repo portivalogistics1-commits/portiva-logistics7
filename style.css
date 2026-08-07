@@ -14,6 +14,7 @@ nav.pure-transparent { background: transparent; padding: 15px 0; position: absol
     border: 1px solid var(--blue); 
     border-radius: 4px; 
     font-size: 13px; 
+    transition: 0.3s;
 }
 .nav-square-btn:hover, .nav-square-btn.active { background: var(--blue); box-shadow: 0 0 15px var(--blue); }
 .logo img { height: 40px; }
@@ -27,7 +28,7 @@ nav.pure-transparent { background: transparent; padding: 15px 0; position: absol
 /* الجملة السحرية المربعة في النص */
 @keyframes squareBouncing { 0%, 100% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, -15px); } }
 .magic-center-container {
-position: absolute; left: 50%; bottom: 50px;
+    position: absolute; left: 50%; bottom: 50px;
     transform: translateX(-50%); z-index: 100;
     animation: squareBouncing 2.5s infinite ease-in-out;
 }
@@ -37,7 +38,8 @@ position: absolute; left: 50%; bottom: 50px;
     text-align: center; box-shadow: 0 15px 35px rgba(0,0,0,0.4);
 }
 .magic-text { font-size: 19px; color: var(--dark); font-weight: bold; margin-bottom: 12px; }
-.cta-with-icon { background: var(--blue); color: white; text-decoration: none; padding: 12px 25px; border-radius: 6px; font-weight: bold; border: 2px solid white; display: inline-block; }
+.cta-with-icon { background: var(--blue); color: white; text-decoration: none; padding: 12px 25px; border-radius: 6px; font-weight: bold; border: 2px solid white; display: inline-block; transition: 0.3s; }
+.cta-with-icon:hover { background: white; color: var(--blue); }
 
 /* الأيقونات الزرقاء بالشرح */
 .services-overlap { position: absolute; bottom: -45px; width: 94%; left: 50%; transform: translateX(-50%); }
@@ -47,9 +49,10 @@ position: absolute; left: 50%; bottom: 50px;
     border-radius: 8px; color: white; text-decoration: none; 
     text-align: center; border: 1px solid var(--blue); transition: 0.3s;
 }
+.service-card:hover { transform: translateY(-5px); border-color: white; }
 .service-card i { font-size: 32px; color: var(--blue); margin-bottom: 10px; display: block; }
 .service-card h4 { color: var(--blue); margin-bottom: 5px; font-size: 16px; }
-.service-card p { font-size: 11px; opacity: 0.9; color: #ccc; } /* لون الشرح فاتح وشيك */
+.service-card p { font-size: 11px; opacity: 0.9; color: #ccc; }
 
 /* الجاليري (7 صور) */
 .work-gallery { padding: 130px 5% 50px; text-align: center; }
@@ -60,15 +63,18 @@ position: absolute; left: 50%; bottom: 50px;
 /* الصفحات الفرعية (الهيرو جواها) */
 .hero-sub { height: 100vh; background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; background-image: url('hero.jpg'); }
 .sub-content-box { background: rgba(0, 12, 29, 0.92); padding: 50px; border-radius: 15px; border: 2px solid var(--blue); color: white; text-align: center; max-width: 800px; }
+
+/* الفوتر والتواصل */
 footer {
-    background: #000c1d;
+    background: var(--dark);
     color: white;
     padding: 50px 10% 20px;
     text-align: center;
+    border-top: 5px solid var(--blue);
 }
 
 footer h3 {
-    color: #007bff;
+    color: var(--blue);
     margin-bottom: 30px;
     font-size: 24px;
 }
@@ -93,7 +99,7 @@ footer h3 {
 
 .contact-item i {
     font-size: 30px;
-    color: #007bff; /* اللون الأزرق بتاعنا */
+    color: var(--blue);
 }
 
 .contact-item span {
@@ -102,10 +108,10 @@ footer h3 {
 
 .contact-item:hover {
     transform: translateY(-5px);
-    color: #007bff;
+    color: var(--blue);
 }
 
-/* أيقونة الواتساب الطائرة (لو مش موجودة) */
+/* أيقونة الواتساب الطائرة */
 .whatsapp-float {
     position: fixed;
     bottom: 30px;
@@ -121,4 +127,9 @@ footer h3 {
     font-size: 32px;
     z-index: 3000;
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    text-decoration: none;
+    transition: 0.3s;
+}
+.whatsapp-float:hover {
+    transform: scale(1.1);
 }
